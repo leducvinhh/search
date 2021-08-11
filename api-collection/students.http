@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:3000/api
+
+# Students
+
+# @name getAllStudents
+
+GET {{baseUrl}}/students
+
+###
+
+# @name filterStudents
+
+GET {{baseUrl}}/students?_page=1&_limit=20
+
+###
+
+# @name addNewStudents
+
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+  {
+  
+  }
+
+###
+
+# @name updateStudents
+
+PATCH  {{baseUrl}}/students/2
+Content-Type: application/json
+
+  {
+       "fullName": "Nguyễn Quốc Huy Cường",
+      "class": "D17C01A",
+      "mssv": 1013,
+      "address": "Dĩ An_Bình Dương"
+  }
+
+
+###
+
+# @name removeStudents
+DELETE   {{baseUrl}}/students/

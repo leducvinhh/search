@@ -1,0 +1,18 @@
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table, tr, td {
+  border: 1px solid #333;
+  border-collapse: collapse;
+  
+}
+td {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient( rgba(15, 12, 12, 0.699), rgba(43, 40, 40, 0.699), rgb(59, 40, 230), rgba(47, 55, 56, 0.979) );
+    text-shadow: 0px 0px 0px rgb(5 5 5);
+    filter: brightness(700%);
+}

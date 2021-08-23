@@ -17,7 +17,9 @@ function Header(props) {
 
   function handleSearchTermChange(e) {
     const value = e.target.value;
+
     setSearchTerm(value);
+
     if (!onSubmit) return;
 
     if (typingTimeoutRef.current) {
@@ -38,6 +40,7 @@ function Header(props) {
     const formValue = {
       value,
     };
+
     if (!onSubmit) return;
 
     onSubmit(formValue);

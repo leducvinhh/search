@@ -23,11 +23,12 @@ function Pagination(props) {
     <div className="pagination">
       <button
         className="prev"
-        disabled={_page <= 1}
+        disabled={_page <=  1} 
         onClick={() => handlePageChange(_page - 1)}
       >
         Prev
       </button>
+
       <button
         className="next"
         disabled={_page >= totalPages}

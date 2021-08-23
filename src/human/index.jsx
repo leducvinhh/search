@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
-
+ 
 Students.propTypes = {
   students: PropTypes.array,
 };
@@ -38,18 +38,24 @@ function Students(props) {
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => {
-            return (
-              <tr key={student.id}>
-                <td height="30px">{student.id}</td>
-                <td height="30px">{student.fullName}</td>
-                <td height="30px">{student.class}</td>
-                <td height="30px">{student.mssv}</td>
-                <td height="30px">{student.gender}</td>
-                <td height="30px">{student.address}</td>
-              </tr>
-            );
-          })}
+          {students.length > 0 ? (
+            students.map((student) => {
+              return (
+                <tr key={student.id}>
+                  <td height="30px">{student.id}</td>
+                  <td height="30px">{student.fullName}</td>
+                  <td height="30px">{student.class}</td>
+                  <td height="30px">{student.mssv}</td>
+                  <td height="30px">{student.gender}</td>
+                  <td height="30px">{student.address}</td>
+                </tr>
+              );
+            })
+          ) : (
+            <td colSpan="6">
+              Không tìm thấy kết quả phù hợp, vui lòng nhập lại từ khóa
+            </td>
+          )}
         </tbody>
       </table>
     </div>

@@ -26,13 +26,14 @@ function App() {
         const response = await fetch(requestUrl);
         const responseJson = await response.json();
         const { data, pagination } = responseJson;
+
         setStudentsList(data);
         setPagination(pagination);
       } catch (error) {
-        console.error('Failed to fetch students list', error.message);
+        console.error('Failed to fetch  students list', error.message);
       }
     }
-
+    
     getApi();
   }, [filters]);
 

@@ -33,7 +33,7 @@ function App() {
         console.error('Failed to fetch  students list', error.message);
       }
     }
-    
+
     getApi();
   }, [filters]);
 

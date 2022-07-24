@@ -4,9 +4,11 @@ import Students from './human';
 import Pagination from './Pagination';
 import Header from './search';
 import queryString from 'query-string';
+import Content from './Content';
 
 function App() {
   const [studentList, setStudentsList] = useState();
+  const [show, setShow] = useState(false)
   const [pagination, setPagination] = useState({
     _page: 1,
     _limit: 10,
@@ -17,6 +19,8 @@ function App() {
     _limit: 10,
     _page: 1,
   });
+
+
 
   useEffect(() => {
     async function getApi() {
@@ -38,6 +42,7 @@ function App() {
   }, [filters]);
 
   function handlePageChange(newPage) {
+    console.log('ok');
     setFilters({
       ...filters,
       _page: newPage,
@@ -54,6 +59,8 @@ function App() {
 
   return (
     <div className="App">
+      <button onClick={() => setShow(!show)}>Toggle</button>
+      {show && <Content />}
       <Header onSubmit={handleFilterChange} />
       <Students students={studentList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} />
